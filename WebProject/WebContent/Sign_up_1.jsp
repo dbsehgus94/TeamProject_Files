@@ -1,92 +1,105 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>ȸ������</title>
-<!__link href='../..css/join_style.css' rel='stylesheet'-->
+<meta charset="UTF-8">
+<title>회원가입</title>
+<link href='style.css' rel='stylesheet'>
 </head>
 <body>
+	<center><strong>회원가입</strong></center>
+	<form action="sessionSign_up" method="post">
 	<div>
-		<h3>���̵�</h3>
-		<span class="box int_id">
-			<input type="text" id="id" class="int" maxlength="16">
+		<h3>아이디</h3>
+		<span>
+			<input type="text" id="id" maxlength="16">
 		</span>
 	</div>
 	<div>
-		<h3>��й�ȣ</h3>
-		<span class="box int_pw">
-			<input type="text" id="pw" class="int" maxlength="20">
+		<h3>비밀번호</h3>
+		<span>
+			<input type="password" id="pw" maxlength="20">
 		</span>
 	</div>
 	<div>
-		<h3>��й�ȣ ��Ȯ��</h3>
-		<span class="box int_pw_check">
-			<input type="text" id="pw_check" class="int" maxlength="20">
+		<h3>비밀번호 재확인</h3>
+		<span>
+			<input type="password" id="pw_check" maxlength="20">
 		</span>
 	</div>
 	<div>
-		<h3>�̸�</h3>
-		<span class="box int_name">
-			<input type="text" id="name" class="int" maxlength="10">
+		<h3>이름</h3>
+		<span>
+			<input type="text" id="name" maxlength="10">
 		</span>
 	</div>
 	<div>
-		<h3>����</h3>
-		<span class="box int_gender">
+		<h3>전화번호</h3>
+		<span>
+			<input type="text" id="p_number" maxlength="3" placeholder="앞 3자리">
+			<input type="text" id="p_number" maxlength="4" placeholder="중간 3~4자리">
+			<input type="text" id="p_number" maxlength="4" placeholder="끝 4자리">
+		</span>
+	</div>
+	<div>
+		<h3>성별</h3>
+		<span>
 			<select id="gender" class="sel">
-				<option>����</option>
-				<option value="M">����</option>
-				<option value="F">����</option>
+				<option>성별</option>
+				<option value="M">남자</option>
+				<option value="F">여자</option>
 			</select>
 		</span>
 	</div>
 	<div>
-		<h3>�������</h3>
-		<span class="box int_birthday">
-			<div id="birth_yy" style="float:left;" width=33%>
+		<h3>생년월일</h3>
+		<span>
+			<div id="birth_yy" style="float:left;">
 				<span class="box">
-					<input type="text" id"="yy" class="int" maxlength="4" placeholder="����">
+					<input type="text" id"="yy" class="int" maxlength="4" placeholder="연도(4자리)">
 				</span>
 			</div>
-			<div id="birth_mm" style="float:left;" width=33%>
+			<div id="birth_mm">
 				<span class="box">
 					<select id="mm" class="sel">
-						<option>��</option>
-						<option value="01">1��</option>
-						<option value="02">2��</option>
-						<option value="03">3��</option>
-						<option value="04">4��</option>
-						<option value="05">5��</option>
-						<option value="06">6��</option>
-						<option value="07">7��</option>
-						<option value="08">8��</option>
-						<option value="09">9��</option>
-						<option value="10">10��</option>
-						<option value="11">11��</option>
-						<option value="12">12��</option>
+						<option>월</option>
+						<option value="01">1월</option>
+						<option value="02">2월</option>
+						<option value="03">3월</option>
+						<option value="04">4월</option>
+						<option value="05">5월</option>
+						<option value="06">6월</option>
+						<option value="07">7월</option>
+						<option value="08">8월</option>
+						<option value="09">9월</option>
+						<option value="10">10월</option>
+						<option value="11">11월</option>
+						<option value="12">12월</option>
 					</select>
 				</span>
 			</div>
 			<div id="bir_dd">
 				<span class="box">
-					<input type="text" id="dd" class="int" maxlength="2" placeholder="��">
+					<input type="text" id="dd" class="int" maxlength="2" placeholder="일">
 				</span>
 			</div>
 			
 		</span>
 	</div>
 	<div>
-		<h3>����Ȯ�ο� �̸���</h3>
-		<span class="box int_email">
-			<input type="text" id="email" class="int" maxlength="50" placeholder="�̸����� �Է��ϼ���">
+	<span>
+		<h3>본인확인용 이메일</h3>
+		<span id="box int_email" style="float:left;">
+			<input type="text" id="email" class="int" maxlength="50" placeholder="이메일을 입력하세요">
 		</span>
+	</span>
 	</div>
-	<div id="sel_email" style="float:left;" width=33%>
+	
+	<span id="sel_email" style="float:left;" width=33%>
 				<span class="box">
 					<select id="mm" class="sel">
-						<option>�̸��� ����</option>
+						<option>이메일 선택</option>
 						<option value="01">naver.com</option>
 						<option value="02">hanmail.net</option>
 						<option value="03">nate.com</option>
@@ -95,12 +108,20 @@
 						
 					</select>
 				</span>
-			</div>
+	</span>
 	<br>
-	<div>
+	<div style="display:inline">
+		<h3>주소</h3>
+		<span>
+			<input type="text" id="address" maxlength="500">
+		</span>
+	</div>
+	<br><br>
+	<div style="float:left">
 		<button type="button" id="join">
-			<span>�����ϱ�</span>
+			<span type="submit" value="가입하기">가입하기</span>
 		</button>
 	</div>
+	</form>
 </body>
 </html>
