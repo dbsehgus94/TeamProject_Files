@@ -25,7 +25,47 @@ td {
 #title {
 	background-color: #98B4D4
 }
+
+#divClock {
+	font-size: 30px;
+	color: #81bcf3;
+}
+
+#divClock1 {
+	font-size: 30px;
+	color: #81bcf3;
+}
 </style>
+<script type="text/javascript">
+	function showClock() {
+		var currentDate = new Date();
+		var divClock = document.getElementById('divClock');
+		var divClock1 = document.getElementById('divClock1');
+		var msg = "";
+		var msg1 = "";
+		msg1 += currentDate.getFullYear() + "/";
+		msg1 += currentDate.getMonth() + 1 + "/";
+		if (currentDate.getMonth() >= 12) {
+			msg1 += currentDate.getMonth() - 11 + "/";
+		}
+		msg1 += currentDate.getDate() + " ";
+		msg += currentDate.getHours() + ":";
+		msg += currentDate.getMinutes() + ":";
+		msg += currentDate.getSeconds() + "";
+
+		divClock.innerText = msg;
+		divClock1.innerText = msg1;
+
+		if (currentDate.getMinutes() > 58) {
+			divClock.style.color = "red";
+		}
+		if (currentDate.getMinutes() == 00) {
+			divClock.style.color = "#81bcf3";
+		}
+
+		setTimeout(showClock, 1000); //1초마다 갱신
+	}
+</script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
 	$(function show_hide_enter_option() {
@@ -39,21 +79,45 @@ td {
 		});
 	});
 </script>
+<script>
+	function test_id() {
+		alert("사용 가능한 아이디입니다.");
+	}
+</script>
+<script>
+	function test() {
+		alert("회원가입 완료!!");
+	}
+</script>
 </head>
-<body>
-	<form style="border: 0px solid red;" action="login.jsp" method="post">
-		<div style="border: 0px solid red;" id="area">
+<body onload="showClock()" style="display: inline">
+	<div id="divClock" class="clock"
+		style="float: right; width: 13%; border: 0px solid red; display: inline">
+	</div>
 
+	<center style="display: inline">
+		<div id="divClock1" class="clock"
+			style="float: right; width: 13%; border: 0px solid red; display: inline">
+		</div>
+	</center>
+	<h1 style="display: inline">
+		<a href="common_menu.jsp" style="text-decoration: none">
+			<div style="display:inline; float:left; color: black; width: 15%; border: 0px solid red;"
+				id="item">
+				<font size=20 color="#e68bf8">HOME</font>
+			</div>
+
+		</a>
+	</h1>
+	<form style="border: 0px solid red;" action="Login.jsp" method="post">
+		<div style="border: 0px solid red;" id="area">
 			<br> <br> <b><font size="6" color="gray"><center>회원가입</center></font></b>
-			<br> <br> <label for="chkEntCus"> <input
-				type="checkbox" id="chkEntCus" style="text-align: center" /> 사업자
-				회원이십니까?
-			</label> <br> <br>
+			<br> <br>
 			<table style="border: 0px solid red;">
 				<tr>
 					<td id="title"><center>아이디</center></td>
 					<td><input type="text" name="id" maxlength="16"> <input
-						type="button" value="중복확인" onclick=""></td>
+						type="button" value="중복확인" onclick="test_id()"></td>
 				</tr>
 
 				<tr>
@@ -99,8 +163,7 @@ td {
 							<option value="11">11</option>
 							<option value="12">12</option>
 					</select> <input type="text" name="birth_dd" maxlength="2" placeholder="일"
-						size="4"> <!-- 만약 사용자가 31을 초과하는 숫자를 입력하거나 1 미만의 숫자를 입력하는 경우 
-                        가장 가까운 정수(ex. 00->01 or 1 / 32 -> 31 or 30 or 28 or 29)로 바꾸는 조건문을 만들어야한다. -->
+						size="4">
 					</td>
 				</tr>
 
@@ -158,10 +221,18 @@ td {
 				</tr>
 
 			</table>
+
+			<br> <br> <label for="chkEntCus"> <input
+				type="checkbox" id="chkEntCus" style="text-align: center" /> <font
+				size="5" color="gray"><strong> 사업자(기업) 회원이십니까?</strong></font>
+			</label> <br> <br>
 		</div>
 
+
+
 		<div id="entTable">
-			<div style="border: 0px solid red;" id="area"><br><br>
+			<div style="border: 0px solid red;" id="area">
+				<br> <br>
 
 
 
@@ -210,11 +281,17 @@ td {
 							maxlength="100"></td>
 					</tr>
 				</table>
-				<br> <br> <input
-					style="border: 1px solid black; margin: 0 auto;" type="submit"
-					value="회원가입"> <br>
+
 			</div>
 		</div>
+		<br> <br>
+		<center>
+			<input
+				style="border: 1px solid black; margin: 0 auto; width: 200px; height: 70px"
+				type="submit" value="회원가입" onclick='test()'>
+		</center>
+		<br>
+	</form>
 </body>
 </html>
 

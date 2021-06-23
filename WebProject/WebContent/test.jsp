@@ -25,7 +25,8 @@
 	//stmt.executeUpdate("");
 	//rs.next() : 현재 행에서 한 행 앞으로 이동
 	//rs.previous() : 현재 행에서 한 행 뒤로 이동
-	
+	//rs.first() : 현재 행에서 첫 번째 행의 위치로 이동
+	//rs.last() : 현재 행에서 마지막 행의 위치로 이동
 	while (rs.next()) {
 		out.print("<h6>" + rs.getString("employee_id") + "&nbsp&nbsp&nbsp" + rs.getString("salary") + "</h6>");
 	}

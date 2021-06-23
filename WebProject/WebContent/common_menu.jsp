@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/common_menu_style.css" type="text/css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/common_menu_style.css" type="text/css"/>
 <title>Insert title here</title>
 </head>
 <body>
@@ -53,10 +53,10 @@
 					<a href="#" class="nav">장바구니</a>
 					</li>
 					<li class="nav_item">
-					<a href="#" class="nav">로그인</a>
+					<a href="Login.jsp" class="nav">로그인</a>
 					</li>
 					<li class="nav_item">
-					<a href="#" class="nav">회원가입</a>
+					<a href="Sign_up.jsp" class="nav">회원가입</a>
 					</li>
 					<li class="nav_item">
 					<a href="#" class="nav">마이페이지</a>
