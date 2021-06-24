@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+#area {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border: 0px solid black;
+}
+
+table {
+	border: 2px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+}
+
+td {
+	border: 1px solid #98B4D4
+}
+
+#title {
+	background-color: #98B4D4
+}
+
+#Sign_font {
+	font-size: 30px;
+	color: gray;
+	display:inline;
+}
+#body {
+	display:inline
+}
+
+#logo {
+	display: inline;
+	float: left;
+	width: 15%;
+	border: 0px solid red;
+	font-size: 30px;
+	color: "#e68bf8";
+}
+
+#Sign_Up_text {
+	font-size:6;
+	color:gray;
+}
+
+#pw {
+	width:50%;
+}
+
+#pw_check {
+	width:50%;
+}
+
+#birth_yy {
+	width:20%;
+}
+
+#birth_mm {
+	width:11%;
+}
+
+#email_front {
+	width: 100px;
+}
+
+#phone_left {
+	width: 90px;
+	text-align: center;
+}
+
+#phone_center {
+	width: 115px;
+	text-align: center;
+}
+
+#phone_right {
+	width: 140px;
+	text-align: center;
+}
+
+#address {
+	width: 100%;
+}
+
+#QnA {
+	width: 100%;
+}
+
+#chkEntCus {
+	text-align: center;
+}
+
+#enter_num_1 {
+	width: 60px; 
+	text-align: center;
+}
+
+#enter_num_2 {
+	width: 90px; 
+	text-align: center;
+}
+
+#enter_num_3 {
+	width: 90px; 
+	text-align: center;
+}
+
+#enter_num_4 {
+	width: 50px; 
+	text-align: center;
+}
+
+#en_phone_left {
+	width: 90px; 
+	text-align: center;
+}
+
+#en_phone_center {
+	width: 100px; 
+	text-align: center;
+}
+
+#en_phone_right {
+	width: 105px; 
+	text-align: center;
+}
+
+#en_address {
+	width: 100%;
+}
+
+#Sign_up_button {
+	border: 1px solid black; 
+	margin: 0 auto; 
+	width: 700px; 
+	height: 100px
+}
