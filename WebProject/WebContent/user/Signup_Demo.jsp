@@ -5,10 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>IWPERSON 회원가입</title>
+</head>
 <link rel="stylesheet" href="Signup_Demo.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="Signup_Demo.js"></script>
-</head>
 <body>
 	<div class="container">
 		<div class="login-form">
@@ -16,22 +16,25 @@
 			<table id="table">
 				<tr>
 					<td id="title">아이디</td>
-					<td><input type="text" name="id" size="30" maxlength="16">
-						<input type="button" value="중복확인" onclick="test_id()"></td>
+					<td><input type="text" name="user_id" size="30" maxlength="16">
+						<input type="button" value="중복확인"></td>
 				</tr>
 
 				<tr>
 					<td id="title">비밀번호</td>
-					<td><input type="password" size="30" name="pw" maxlength="20"></td>
+					<td><input type="password" size="30" name="user_pw" id="pw"
+						maxlength="20" placeholder="8~16자리 특수문자를 포함한 비밀번호를 입력해주세요."></td>
 				</tr>
 
 				<tr>
 					<td id="title">비밀번호 확인</td>
-					<td><input type="password" size="30" name="pw_check"
-						maxlength="20"> <!-- 비밀번호와 비밀번호 확인이 일치하지 않으면 경고문이 출력되고 맞게 입력했으면 경고문이 사라지거나
-                        일치합니다 라는 문구가 출력되게 해야한다. --></td>
+					<td><input type="password" size="30" name="user_pw_check"
+						id="pw_check" maxlength="20"></td>
 				</tr>
-
+				<tr>
+					<td></td>
+					<td><font id="chkNotice" size="2"></font></td>
+				</tr>
 				<tr>
 					<td id="title">이름</td>
 					<td><input type="text" name="name" size="10" maxlength="10"></td>
@@ -69,7 +72,7 @@
 					<td id="title">이메일</td>
 					<td><input id="email" type="text" name="email_1"
 						maxlength="30">&nbsp;@&nbsp; <select class="selectbox"
-						name="email_2"">
+						name="email_2">
 							<option>naver.com</option>
 							<option>daum.net</option>
 							<option>gmail.com</option>
@@ -81,19 +84,14 @@
 
 				<tr>
 					<td id="title">휴대전화</td>
-					<td><select class="selectbox" name="telecom">
-							<option>SKT</option>
-							<option>KT</option>
-							<option>LGU+</option>
-							<option>알뜰폰</option>
-					</select> <input id="phone" type="text" size="3" name="phone_1"
+					<td><input id="phone" type="text" size="3" name="phone_1"
 						placeholder="010" /> <input id="phone" type="text" size="4"
 						name="phone_2" placeholder="1234" /> <input id="phone"
 						type="text" size="4" name="phone_3" placeholder="5678" /></td>
 				</tr>
 				<tr>
 					<td id="title">주소</td>
-					<td><input id="address" type="text" size="50" name="address" />
+					<td><input id="address" type="text" size="50" name="street_address" placeholder="도로명주소"/>
 
 						<input id="address_detail" type="text" size="50" name="address"
 						placeholder="상세주소" /></td>

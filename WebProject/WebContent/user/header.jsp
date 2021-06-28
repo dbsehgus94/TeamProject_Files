@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="header_style.css" type="text/css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/header_style.css" type="text/css"/>
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
 	<div id="gnb" class>
 		<div class="list_nav">
 			<div class="logo_area">
-				<a href="#"><img width="120px" height="120px" src="logo.png"></a>
+				<a href="#"><img width="120px" height="120px" src="${pageContext.request.contextPath}/images/logo.png"></a>
 			</div>
 		</div>
 		<div class="gnb_inner">
