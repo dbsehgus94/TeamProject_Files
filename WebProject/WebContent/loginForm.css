@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
 
 table {
@@ -60,7 +60,7 @@ border: none;
 @media(max-width:800px ){
 	table {
       position: absolute;
-      /* Å×ÀÌºí »óÇÏÁÂ¿ì Á¶Á¤ */
+      /* í…Œì´ë¸” ìƒí•˜ì¢Œìš° ì¡°ì • */
       left: 500px;
       top: 350px;    }
 	font{

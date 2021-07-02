@@ -10,14 +10,10 @@
 <%
 // post 전송 데이터 한글 처리
 request.setCharacterEncoding("UTF-8");
-
 String id = request.getParameter("id");
 String pw = request.getParameter("pw");
-
 // 기존 DB의 사용자 ID, PW
 String dbId = "minky", dbPw = "minky12";
-
-
 if (dbId.equals(id)) {
 	if (dbPw.equals(pw)) {
 		// 로그인 작업 -> 세션값 생성
