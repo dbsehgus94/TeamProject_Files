@@ -17,7 +17,8 @@
 </head>
 <body>
 	<div class="container">
-		<form name="join_proto" class="login-form" action="joinProcess.jsp" method="post">
+		<form name="join_proto" class="login-form" action="joinProcess.jsp"
+			method="post">
 			<div class="form_title" id="form_title">회원가입</div>
 			<table id="table">
 				<tr>
@@ -28,14 +29,13 @@
 
 				<tr>
 					<td id="title">비밀번호</td>
-					<td><input type="password" size="30" id="pw" name="pw"
-						maxlength="20"></td>
+					<td><input type="password" id="pw" name="pw" maxlength="16"></td>
 				</tr>
 
 				<tr>
 					<td id="title">비밀번호 확인</td>
-					<td><input type="password" size="30" id="pw_check"
-						name="pw_check" maxlength="20"> <!-- 비밀번호와 비밀번호 확인이 일치하지 않으면 경고문이 출력되고 맞게 입력했으면 경고문이 사라지거나
+					<td><input type="password" id="pw_check" name="pw_check"
+						maxlength="16"> <!-- 비밀번호와 비밀번호 확인이 일치하지 않으면 경고문이 출력되고 맞게 입력했으면 경고문이 사라지거나
                         일치합니다 라는 문구가 출력되게 해야한다. --></td>
 				</tr>
 
@@ -57,8 +57,7 @@
 
 				<tr>
 					<td id="title">생년월일</td>
-					<td><input type="date" name="birth"
-						max="2007-07-15"></td>
+					<td><input type="date" name="birth" max="2007-07-15"></td>
 				</tr>
 
 				<tr>
@@ -134,11 +133,12 @@
 					<tr>
 						<td id="title">사업장 전화번호</td>
 						<td><input id="ent_phone_first" type="text" size="3"
-							maxlength="3" name="ent_phone_1" placeholder="031" /> <input
-							id="ent_phone" type="text" size="4" maxlength="4"
-							name="ent_phone_2" placeholder="1234" /> <input id="ent_phone"
-							type="text" size="4" maxlength="4" name="ent_phone_3"
-							placeholder="5678" /></td>
+							maxlength="3" name="ent_phone_1" placeholder="031"
+							pattern="[0]{1}[2-9]{1,2}" /> <input id="ent_phone" type="text"
+							size="4" maxlength="4" name="ent_phone_2" placeholder="1234"
+							pattern="[0-9]{3,4}" /> <input id="ent_phone" type="text"
+							size="4" maxlength="4" name="ent_phone_3" placeholder="5678"
+							pattern="[0-9]{4}" /></td>
 					</tr>
 
 					<tr>

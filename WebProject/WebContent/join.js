@@ -11,7 +11,11 @@ $(function show_hide_enter_option() {
 	
 $(function(){
 	$('#pw').keyup(function(){
-		if($('#pw').val() != $('#pw_check').val()){
+		if($('#pw').val().length < 8){
+			$('#chkNotice').html('비밀번호는 8자리 이상 16자리 이하로 설정해주세요.');
+			$('#chkNotice').attr('color', 'red');
+			}
+		else if($('#pw').val() != $('#pw_check').val()){
 			$('#chkNotice').html('비밀번호 일치하지 않음<br>');
 			$('#chkNotice').attr('color', 'red');
 		} 
@@ -20,6 +24,7 @@ $(function(){
 			$('#chkNotice').html('<br>');
 			$('#chkNotice').attr('color', 'white');
 			}
+			
 			
 			else{
 			$('#chkNotice').html('비밀번호 일치함<br>');
@@ -32,8 +37,11 @@ $(function(){
 	});
 	
 	$('#pw_check').keyup(function(){
-		
-		if($('#pw_check').val() != $('#pw').val()){
+		if($('#pw_check').val().length < 8){
+			$('#chkNotice').html('비밀번호는 8자리 이상 16자리 이하로 설정해주세요.');
+			$('#chkNotice').attr('color', 'red');
+			}
+		else if($('#pw_check').val() != $('#pw').val()){
 			$('#chkNotice').html('비밀번호 일치하지 않음<br>');
 			$('#chkNotice').attr('color', 'red');
 		} 
