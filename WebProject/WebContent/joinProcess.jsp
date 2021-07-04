@@ -11,16 +11,16 @@
 	String password_check = request.getParameter("pw_check");
 	String name = request.getParameter("name");
 	String gender = request.getParameter("gender");
-	String birthday = request.getParameter("birth_yy")+request.getParameter("birth_mm")+request.getParameter("birth_dd");
+	String birthday = request.getParameter("birth");
 	String email = request.getParameter("email_1")+"@"+request.getParameter("email_2");
-	String phone = request.getParameter("phone_1")+request.getParameter("phone_2")+request.getParameter("phone_3");
-	String address = request.getParameter("address_street")+request.getParameter("address_detail");
+	String phone = request.getParameter("phone_1")+"-"+request.getParameter("phone_2")+"-"+request.getParameter("phone_3");
+	String address = request.getParameter("address_street")+" "+request.getParameter("address_detail");
 	String question = request.getParameter("question");
 	String answer = request.getParameter("answer");
 	String ent_name = request.getParameter("enter_name");
-	String ent_num = request.getParameter("enter_num_1")+request.getParameter("enter_num_2")+request.getParameter("enter_num_3")+request.getParameter("enter_num_4");
-	String ent_phone = request.getParameter("ent_phone_1")+request.getParameter("ent_phone_2")+request.getParameter("ent_phone_3");
-	String ent_address = request.getParameter("ent_Address")+request.getParameter("entAddress");
+	String ent_num = request.getParameter("enter_num_1")+"-"+request.getParameter("enter_num_2")+"-"+request.getParameter("enter_num_3")+request.getParameter("enter_num_4");
+	String ent_phone = request.getParameter("ent_phone_1")+"-"+request.getParameter("ent_phone_2")+"-"+request.getParameter("ent_phone_3");
+	String ent_address = request.getParameter("ent_Address")+" "+request.getParameter("entAddress");
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -66,6 +66,8 @@
 		out.println("window.history.go(-1);");
 		out.println("</script>");
 	}
+	
+	
 %>
 <!DOCTYPE html>
 <html>

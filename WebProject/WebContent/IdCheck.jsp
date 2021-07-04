@@ -1,34 +1,65 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "javax.sql.*" %>
+<%@ page import = "javax.naming.*" %>
+<%@ page import = "java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>IdCheck</title>
+<script>
+function checkIdClose(id){
+	opener.join_proto.id.value=id;
+	window.close();
+	opener.join_proto.id.focus();
+}
+</script>
 </head>
 <body>
 <%
-// post 전송 데이터 한글 처리
-request.setCharacterEncoding("UTF-8");
-String id = request.getParameter("id");
-
-// 기존 DB의 사용자 ID
-String dbId = "qwer";
-String dbId1 = "qwerty";
-if (dbId.equals(id)||dbId1.equals(id)) {
-	session.setAttribute("id", id);
-	%>
-	<script>alert("동일한 아이디가 있습니다.");
-	window.history.go(-1);
-	</script>
-	<%
-} else {
-	%>
-	<script>alert("사용 가능한 아이디입니다.");
-	window.history.go(-2);
-	</script>
-	<% 
-}
+	request.setCharacterEncoding("UTF-8");
+	String id = request.getParameter("id");
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	try{
+		Context init = new InitialContext();
+		DataSource ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDB");
+		conn = ds.getConnection();
+		
+		pstmt = conn.prepareStatement("SELECT * FROM cust_info WHERE cust_id = ?");
+		pstmt.setString(1,id);
+		rs = pstmt.executeQuery();
+		
+		if(rs.next()){
+			if(id.equals(rs.getString("cust_id"))){
+				out.println("<script>");
+				out.println("alert('이미 존재하는 아이디입니다.')");
+				out.println("window.history.go(-1)");
+				out.println("</script>");
+			}
+		%>
+		<%
+		}
+		else{
+		%>
+		<%=id %> 사용가능<br>
+		<a href="IdCheck_window.jsp">다른 아이디 고르기</a><br><br>
+		<input type="button" value="현재 아이디 선택" onClick="javascript:checkIdClose('<%=id%>')">
+		<%
+		}
+		
+	}catch(Exception e){
+		out.println(e.getMessage());
+		out.println("<script>");
+		out.println("alert('오류')");
+		out.println("window.history.go(-1)");
+		out.println("</script>");
+	}
 %>
+
 </body>
-</html></html>
+</html>
