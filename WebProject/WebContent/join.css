@@ -19,7 +19,7 @@
 	left: 50%;
 }
 
-.login-form {
+.login_form {
 	width: 800px;
 	height: 1200px;
 	background-color: white;
@@ -29,7 +29,7 @@
 	left: 50%;
 }
 
-.login-form #signup_button {
+.login_form #signup_button {
 	margin-left: 360px;
 }
 
@@ -60,7 +60,7 @@
 }
 
 #email {
-	width: 100px;
+	width: 150px;
 }
 
 #phone {
@@ -95,7 +95,6 @@
 #ent_num_1 {
 	width: 60px;
 	text-align: center;
-	margin-left: 3px;
 }
 
 #ent_num_2, #ent_num_3 {
@@ -112,7 +111,6 @@
 
 #ent_phone_first {
 	text-align: center;
-	margin-left: 3px;
 }
 
 #ent_phone {
@@ -120,13 +118,11 @@
 	margin-left: 15px;
 }
 
-#ent_address {
+#ent_address_street {
 	width: 482px;
-	margin-left: 3px;
 }
 
 #ent_address_detail {
 	width: 482px;
-	margin-left: 3px;
 	margin-top: 20px;
 }
